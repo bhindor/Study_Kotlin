@@ -1,0 +1,50 @@
+package kr.hs.mysampleapp
+
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import kr.hs.mysampleapp.databinding.ActivityJoinBinding
+import kr.hs.mysampleapp.databinding.ActivityLoginBinding
+
+class loginActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
+
+    private lateinit var binding : ActivityLoginBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+        auth = Firebase.auth
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_login)
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
+
+        binding.loginBtn.setOnClickListener {
+            val email: EditText = binding.emailArea
+            val pwd: EditText = binding.pwdArea
+            auth.signInWithEmailAndPassword(email.text.toString(), pwd.text.toString())
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
+
+                    } else {
+                        Toast.makeText(this, "no", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+        }
+        val joinBtn = findViewById<Button>(R.id.go_joinBtn)
+        joinBtn.setOnClickListener {
+            val intent = Intent(this, joinActivity::class.java)
+            startActivity(intent)
+        }
+    }
+}
