@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "343338139971",
+    "project_id": "myfirebasekotlin-54887",
+    "storage_bucket": "myfirebasekotlin-54887.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343338139971:android:7146113502d51e8994eff6",
+        "android_client_info": {
+          "package_name": "kr.hs.myfirebasekotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343338139971-g6i9biv97fr40qknt6mljec1liuagl5b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARQE7zp-bX34Lnna0lVqVtPXp4sAlC9KM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343338139971-g6i9biv97fr40qknt6mljec1liuagl5b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
