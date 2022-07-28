@@ -59,6 +59,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+    private fun initStartPhotoFrameModeBtn(){
+        startBtn.setOnClickListener {
+            val intent = Intent(this, PhotoFrameActivity::class.java)
+            imageUriList.forEachIndexed { index, uri ->
+                intent.putExtra("photo$index", uri.toString())
+            }
+            intent.putExtra("photoListSize", imageUriList.size)
+            startActivity(intent)
+        }
+    }
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -120,9 +132,7 @@ class MainActivity : AppCompatActivity() {
             .create()
             .show()
     }
-    private fun initStartPhotoFrameModeBtn(){
 
-    }
 
 
 }
