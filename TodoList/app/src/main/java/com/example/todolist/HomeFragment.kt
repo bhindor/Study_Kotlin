@@ -5,12 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.todolist.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
-
+    private val mDatas = mutableListOf<TodoData>(
+        TodoData("hello", "첫번째 글입니다."),
+        TodoData("second", "두번째 글입니다.")
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -21,6 +25,18 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    fun initDataRecyclerView() {
+        val adapter = HomeAdapter(requireContext())
+        adapter.dataList = mDatas
+        binding.homeRecycle.adapter = adapter
+        binding.homeRecycle.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initDataRecyclerView()
     }
 
 }
