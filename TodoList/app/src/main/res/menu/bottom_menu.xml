@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/home"
         android:icon="@drawable/ic_home"
         android:title="홈" />
 
     <item
-        android:id="@+id/registerFragment"
+        android:id="@+id/write"
         android:icon="@drawable/ic_upload"
         android:title="등록" />
 

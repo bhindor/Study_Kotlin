@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WriteFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/MainColor">
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:hint="제목을 작성하세요."
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/et_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_main"
+            android:layout_width="0dp"
+            android:layout_height="400dp"
+            android:layout_marginVertical="20dp"
+            android:background="@color/white"
+            android:gravity="top"
+            android:hint="내용을 작성해주세요."
+            android:paddingStart="14dp"
+            android:paddingTop="14dp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/btn_register"
+            app:layout_constraintEnd_toEndOf="@id/et_title"
+            app:layout_constraintStart_toStartOf="@id/et_title"
+            app:layout_constraintTop_toBottomOf="@id/et_title" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:text="등록"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/et_title"
+            app:layout_constraintStart_toStartOf="@id/et_title"
+            app:layout_constraintTop_toBottomOf="@id/et_main" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
