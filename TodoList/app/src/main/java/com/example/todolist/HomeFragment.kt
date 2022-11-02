@@ -12,8 +12,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private val mDatas = mutableListOf<TodoData>(
-        TodoData("hello", "첫번째 글입니다."),
-        TodoData("second", "두번째 글입니다.")
+        TodoData("ㅇㅇㅇ", "ㅇㅇㅇ")
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

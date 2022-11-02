@@ -24,5 +24,11 @@ class WriteFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        App.prefs.myTitle = binding.etTitle.text.toString()
+        App.prefs.myMainText = binding.etMain.text.toString()
+    }
+
 
 }
